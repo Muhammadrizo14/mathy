@@ -1,18 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import './styles.scss'
 
 const getStorageTheme = () => {
-  let theme = 'light-theme'
+  let theme: string = 'light-theme';
+  const storedTheme = localStorage.getItem('theme');
 
-  if (localStorage.getItem('theme')) {
-    theme = localStorage.getItem('theme')
+  if (storedTheme !== null) {
+    theme = storedTheme;
   }
 
-  return theme
-}
+  return theme;
+};
 
 const Index = () => {
-  const [theme, setTheme] = useState(getStorageTheme)
+  const [theme, setTheme] = useState<string>(getStorageTheme)
 
 
   const toggleTheme = ()=> {
