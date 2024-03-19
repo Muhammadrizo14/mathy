@@ -1,0 +1,9 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  background: var(--main-surface-primary);
+  color: var(--text-primary);
+
+}
