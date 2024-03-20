@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  background: var(--main-surface-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  align-items: center;
+  main {
+    .routes {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      .route {
+        width: 300px;
+        background: var(--);
+        border: 1px solid var(--border-light);
+        border-radius: 16px;
+        padding: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
