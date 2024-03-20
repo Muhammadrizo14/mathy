@@ -4,6 +4,16 @@ import Addition from "../../Components/Addition";
 import Main from "../../Layouts/Main";
 const Index = () => {
   const [answer, setAnswer] = useState('')
+  const [firstNum, setFirstNum] = useState(30)
+  const [secondNum, setSecondNum] = useState(30)
+  const [counterSuccess, setCounterSuccess] = useState(0)
+
+  const success = ()=> {
+    setCounterSuccess(prevState => prevState+1)
+    setFirstNum(Math.floor(Math.random() * 50))
+    setSecondNum(Math.floor(Math.random() * 50))
+    setAnswer('')
+  }
 
 
   useEffect(() => {
@@ -25,7 +35,9 @@ const Index = () => {
   return (
     <Main>
       <div className='fast-test'>
-        <Addition firstNum={23} secondNum={23} answer={Number(answer)}/>
+        <p className='results'>{counterSuccess}</p>
+
+        <Addition firstNum={firstNum} secondNum={secondNum} answer={Number(answer)} success={() => success()}/>
       </div>
     </Main>
   );

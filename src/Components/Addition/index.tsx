@@ -4,10 +4,11 @@ import './styles.scss'
 type IProps= {
   firstNum: number,
   secondNum: number,
-  answer:number
+  answer:number,
+  success: ()=> void
 }
 
-const Index = ({firstNum, secondNum, answer}: IProps) => {
+const Index = ({firstNum, secondNum, answer, success}: IProps) => {
   const myArr = (num: number) => String(num).split("").map((num) => Number(num))
   const wrap = useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
 
@@ -15,6 +16,7 @@ const Index = ({firstNum, secondNum, answer}: IProps) => {
   useEffect(() => {
     if (answer === firstNum + secondNum) {
       wrap.current.classList.add('success')
+      success()
     } else {
       wrap.current.classList.remove('success')
     }
