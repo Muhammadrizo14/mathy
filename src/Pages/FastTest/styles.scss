@@ -6,4 +6,20 @@
     right: 10%;
     color: green;
   }
+  .skip-btn {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    cursor: pointer;
+    border: 0;
+    border-radius: 16px;
+
+    padding: 5px;
+    background: var(--sidebar-surface-tertiary);
+
+    svg {
+      fill: var(--text-primary);
+      width: 24px;
+    }
+  }
 }
