@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import './styles.scss'
 import Addition from "../../Components/Addition";
 import Main from "../../Layouts/Main";
@@ -9,7 +9,7 @@ const Index = () => {
   useEffect(() => {
     const handleKeyDown = (event: any) => {
       if (event.code.includes('Numpad') || event.code.includes('Digit')) {
-        setAnswer(prevState => prevState.concat(event.key));
+        setAnswer(prevState => prevState.concat(event.key.replace(/\D/g,'')));
       } else if(event.code === 'Backspace') {
         setAnswer(prevState => prevState.slice(0, -1))
       }

@@ -1,9 +1,15 @@
-import React, {useEffect, useRef} from 'react';
+import {MutableRefObject, useEffect, useRef} from 'react';
 import './styles.scss'
 
-const Index = ({firstNum, secondNum, answer}: number) => {
+type IProps= {
+  firstNum: number,
+  secondNum: number,
+  answer:number
+}
+
+const Index = ({firstNum, secondNum, answer}: IProps) => {
   const myArr = (num: number) => String(num).split("").map((num) => Number(num))
-  const wrap = useRef<HTMLDivElement>(null)
+  const wrap = useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
 
 
   useEffect(() => {
